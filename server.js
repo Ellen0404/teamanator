@@ -24,7 +24,7 @@ app.use(express.json());
 
 // connect to mongoDB
 mongoose
-    .connect(process.env.MONGODB_URI || 'mongodb://localhost/teams')
+    .connect(process.env.MONGODB_URI || "mongodb://team:team12345@ds141208.mlab.com:41208/heroku_1ms0klv2", { useNewUrlParser: true, useFindAndModify: false })
     // .connect(db, { useNewUrlParser: true, useFindAndModify: false })
     .then(() => console.log("MongoDB is connected..."))
     .catch(err => console.log(err));
