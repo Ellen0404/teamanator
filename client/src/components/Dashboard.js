@@ -252,7 +252,7 @@ function Dashboard(props) {
 
 
             </div >
-            <Footer />
+            {/* <Footer /> */}
         </DashboardStyle >
 
     )
