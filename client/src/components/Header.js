@@ -5,7 +5,7 @@ function Header() {
     return (
         <HeaderStyle>
         <nav className="header-main">
-            <img bottom width = "18%" src = {`${process.env.PUBLIC_URL}/images/no-outline-01.png`} alt="TeamanatorLogo" style ={{margin: "1em"}} />
+        <img bottom width = "18%" src = {`${process.env.PUBLIC_URL}/images/TeamanatorLogo.png`}  alt="TeamanatorLogo" style ={{margin: "1em"}} />
         </nav>
         </HeaderStyle>
         

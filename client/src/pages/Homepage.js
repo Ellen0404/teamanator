@@ -1,122 +1,103 @@
 import React, { useState } from "react";
-import Header from "../components/Header"
-import { Row, Col } from "reactstrap";
-import ReactCardFlip from 'react-card-flip';
-import ExampleCard from "../components/ExampleCard";
-import ExampleCardBack from "../components/ExampleCardBack";
+import {HomeStyle}  from '../style/index.js';
+import { Container} from "reactstrap";
+import { Button as SemButton, Modal as SemModal } from 'semantic-ui-react'
 import { Link, useLocation } from "react-router-dom";
-import { HeaderStyleHome, HomeStyle } from "../style";
-import { Button } from 'semantic-ui-react'
 
 
 function Homepage() {
-    //HANDLE FLIPPING
-    const [flipping, setFlipping] = useState({
-        isFlipped: false
-    });
-
-    const handleClick = (e) => {
-        e.preventDefault();
-        setFlipping(prevState => ({ isFlipped: !prevState.isFlipped }));
-    }
-
 
     return (
         <div className="App">
-            <HeaderStyleHome>
-                <div className="HeaderNav" >
-                    <img bottom width="300px" src={`${process.env.PUBLIC_URL}/images/no-outline-01.png`} alt="TeamanatorLogo" style={{ margin: "1em" }} />
-                    <Button class="ui button" color="blue" ><Link to="/login">log-in</Link></Button>
-                </div>
-            </HeaderStyleHome>
             <HomeStyle>
-                <Row className="topRow">
-                    <Col md={3} className="homeleftColumn">
-                        <img bottom width="65%" src={`${process.env.PUBLIC_URL}/images/Info1.png`} alt="Temp icon" style={{ margin: "3em" }} />
-                        <img bottom width="65%" src={`${process.env.PUBLIC_URL}/images/Info2.png`} alt="Temp icon" style={{ margin: "3em" }} />
-                        <img bottom width="65%" src={`${process.env.PUBLIC_URL}/images/Info3.png`} alt="Temp icon" style={{ margin: "3em" }} />
-                        <img bottom width="65%" src={`${process.env.PUBLIC_URL}/images/Info4.png`} alt="Temp icon" style={{ margin: "3em" }} />
-                    </Col>
-                    <Col md={9} className="HeadlineAndCard">
-                        <Row>
-                            <Col md={9}>
-                                <div class="card headerCard" Height="230px">
-                                    <h1 className="display-3">Teamanator</h1>
-                                    <br></br>
-                                    <h4 >Teamanator is THE solution for all your team management needs.</h4>
-                                    <h4>What?! All my needs are met with this one app?! </h4>
-                                    <h4>Good point, maybe not <em>ALL</em> your needs but it is a darn good app! </h4>
-                                    <br></br>
-                                    <Button class="ui inverted primary button registerbtn" color="blue"><Link to="/register">Create an Account</Link></Button>
-                                    <br></br>
-                                    <Button class="ui Primary button" color="blue"><Link to="/login">log-in</Link></Button>
+            <Container className="themed-container" fluid={true}>
+                    <div className="sidebar">
+                        {/* <div className="ui left visible fixed sidebar"> */}
+                            {/* <div className="pusher"> */}
+                            <img src={`${process.env.PUBLIC_URL}/images/TeamanatorIcon.png`} className="TIcon1"></img>
+                            <SemButton id="SemButton"  className= "logInButtons" fluid color="blue"><Link to="/login">Log-in</Link></SemButton>
+                            <SemButton id="SemButton" className= "logInButtons" fluid color="blue"><Link to="/register">Create Account</Link></SemButton>
+                            <SemButton id="SemButton" className= "logInButtons" fluid color="blue">About us</SemButton>
+                            {/* </div> */}
+                        </div>
+                        <div className="homepageBody">
+                        <div className="TopLogo homepageHeader"> 
+                            <img src={`${process.env.PUBLIC_URL}/images/TeamanatorLogo.png`}  className="headerLogo"></img>
+                            <p>Providing organizational solutions for all the teams in our lives.  Whether you are managing your daughters soccer team or your employees, keep everything at your fingertips. </p>
+                            <button className="ui secondary button"> <Link to="/register">Create Account</Link></button>
+                        </div>
+                        <div className="DividerHeadings">
+                            <h1 className="benefitsHeader">BENEFITS</h1>
+                        </div>
+                        <div className="Benefits ui three comlmn grid">
+                            <div className="four wide column">
+                            </div>
+                            <div className="four wide column">
+                                <div className="BenefitsSection1 ui segment">
+                                    <img src={`${process.env.PUBLIC_URL}/images/TBene1.png`} className="TBenes" ></img>
+                                    <p className="benefitsParagraphs">Create custom team-member templates that only include the information you need. </p>
                                 </div>
-                            </Col>
-                            <Col md={3}>
-                                <div>
-                                    <ReactCardFlip isFlipped={flipping.isFlipped} flipDirection="horizontal">
-                                        <ExampleCard handleClick={handleClick} />
-                                        <ExampleCardBack handleClick={handleClick} />
-                                    </ReactCardFlip>
+                            </div>
+                            <div className="four wide column">
+                                <div className="BenefitsSection2 ui segment">
+                                    <img src={`${process.env.PUBLIC_URL}/images/TBene2.png`} className="TBenes" ></img>
+                                    <p className="benefitsParagraphs">Save money with our all in one dashboard to work with your team. </p>
                                 </div>
-                            </Col>
-
-                        </Row>
-                        <div className="benfitIcons">
-                            <Row>
-                                <Col md={7}>
-                                    <h2>Do you need to organize all the tiny monsters on your son's soccer team?
-                                    Do you have multiple Clients that you need to track?
-                                    What about all those pesky employees to keep track of?
-                                    Well now you can choose the right template for your team.
-                                                Because each team is different right? </h2>
-                                </Col>
-                                <Col md={4}>
-                                    <img bottom width="65%" src={`${process.env.PUBLIC_URL}/images/IconA.png`} alt="Temp icon" />
-                                </Col>
-                            </Row>
+                            </div>
+                            <div className="four wide column">
+                                <div className="BenefitsSection3 ui segment">
+                                    <img src={`${process.env.PUBLIC_URL}/images/TBene3.png`} className="TBenes" ></img>
+                                    <p className="benefitsParagraphs">Stop wasting time tracking information in spreadsheets and by hand. </p>
+                                </div>
+                            </div>   
                         </div>
-                        <div className="benfitIcons2">
-                            <Row>
-                                <Col md={4}>
-                                    <img bottom width="65%" src={`${process.env.PUBLIC_URL}/images/IconB.png`} alt="Temp icon" />
-                                </Col>
-                                <Col md={8}>
-                                    <div className="management">
-                                        <h2>Management extends beyond just knowing who is on your team.
-                                        Also being able to track important dates and to do items critical to your success
-                                        (at least that’s what we have heard). Fear not we have built in these handy features
-                                                for you! </h2>
-                                    </div>
-                                </Col>
-                            </Row>
+                        <div className="breakSection"></div>
+                        <div className="DividerHeadings">
+                            <h1>HOW IT WORKS</h1>
                         </div>
-                        <div className="benfitIcons">
-                            <Row>
-                                <Col md={8}>
-                                    <h2>Custom!! Add all your own customizations! Do you need pictures for all your team members, add away.
-                                                Need a very specific template? Use our custom team member builder (coming soon). </h2>
-                                </Col>
-                                <Col md={4}>
-                                    <img bottom width="65%" src={`${process.env.PUBLIC_URL}/images/IconC.png`} alt="Temp icon" />
-                                </Col>
-                            </Row>
+                            <div className="Works ui four comlmn grid">
+                            <div className="four wide column">
+                            </div>
+                            <div className="four wide column">
+                                <div className="WorksSectionA">
+                                    <img src={`${process.env.PUBLIC_URL}/images/TWorks1.png`} ></img>
+                                </div>
+                                <p className="worksText">Choose your template </p>
+                                 <p className="worksText">Choose from Employees, Students, Sports and Clients</p>
+                            </div>
+                            <div className="four wide column">
+                                <div className="WorksSectionB">
+                                    <img src={`${process.env.PUBLIC_URL}/images/TWorks2.png`} ></img>
+                                </div>
+                                <p className="worksText"> Add all your team members </p>
+                                <p className="worksText"> Add only the information you need with our custom templates</p>
+                            </div>
+                            <div className="four wide column">
+                                <div className="WorksSectionC">
+                                    <img src={`${process.env.PUBLIC_URL}/images/TWorks3.png`} ></img>
+                                </div>
+                                <p className="worksText">Get your team on track </p>
+                                <p className="worksText">Track events with a reminder calendar, keep a to do list and much more</p>
+                            </div>   
                         </div>
-                        <div className="createAccount">
-                            <Row>
-                                <Button color="secondary" size="lg" block>
-                                    <Link to="/login">Create an Account</Link>
-                                </Button>
-                            </Row>
-                        </div>
-                    </Col>
-                </Row>
+                    <div className="DividerHeadings">
+                        <h1 className= "ActionHeader">SEE THE ACTION</h1>
+                    </div>
+                    <div className="actionSection">
+                    <div className="ui embed" data-source={`${process.env.PUBLIC_URL}/images/TeamanatorDemo_1.mp4`}  autoplay loop data-id="O6Xo21L0ybE" data-icon="video" data-placeholder="/images/bear-waving.jpg"></div>
+                    </div>
+                </div>
+                       
+            </Container>
             </HomeStyle>
             <br></br>
             <br></br>
             <br></br>
             <br></br>
             <br></br>
+            <div className="homepageFooter">
+
+            </div>
         </div>
     )
 

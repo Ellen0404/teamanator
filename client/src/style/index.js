@@ -258,73 +258,264 @@ export const HeaderStyleHome = styled.div`
 
 export const HomeStyle = styled.div`
 
-.homeleftColumn{
-  postition:absolute;
-  top:100px;
+.sidebar{
   background-color: #2c2b30;
+  opacity:.7;
+  height: 100%;
+  width: 240px;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  padding-top: 20px;
+  padding-right: 10px;
+
+}
+.TIcon1{
+ margin:50px;
+ width:125px;
+}
+.logInButtons{
+ margin:  10% 10% 10% 2%;
+ padding: 5% 25% 5% 25%;
+}
+
+homepageBody{
+  margin-left: 240px; 
+  font-size: 28px;
+  padding: 0px 10px;
 }
 
 a{
   color: white
 }
 
-.HeadlineAndCard{
-  postition: absolute;
-  top:160px;
+.homepageHeader{
+  text-align: center;
+  left-margin: 45%
+  top-margin: 30%;
+  padding: 15% 10% 15% 30%;
+  p{
+    padding:8% 20% 5% 20%;
+    font-size: 16pt;
+  }
 }
-.headerCard{
+.headerLogo{
+  width: 75%
+}
+.Benefits{
   background-color: #2c2b30;
-  opacity: .7
-  color: #fff;
-  padding: 2em;
-  h4{
-    color: #fff;
-    size: 20pt 
+  opacity:.5;
+  width: 100%
+  padding-left: 30%
+}
+.DividerHeadings{
+  color: white;
+  margin:15% 1% 2% 50%;
 
-  } 
-  h1{
-    color: #fff;
-  }
 }
-.benfitIcons{
- margin: 5em;
- text-align: right
- img{
-   width: 50%
- }
- h2{
-   color: white
-   text-align: right
- }
+.benefitsHeader{
+  padding-left:10%;
 }
-.benfitIcons2{
-  margin: 5em;
-  text-align: left
+.BenefitsSection1{
+  background-color: #2c2b30;
+  Padding:5%
+  Margin-left:30%
+  position: relative;
+  z-index:10;
   img{
-    width: 50%
-    padding-left:25%
-    content-align:right
-  }
-  h2{
-    color: white
-    text-align: right
-  }
- }
-registerbtn{
-  margin: 5px
-}
-@media only screen and (max-width : 992px) {
-  .homeleftColumn {
-      img{
-        width:30%
-      }
-  }
-  ReactCardFlip{
-    margin:50%
-  }
-  .benfitIcons{
-    text-size: 25%
+    padding:10% 10% 10% 30%;
   }
 
 }
+.benefitsParagraphs{
+    color:white;
+    text-align: center;
+    padding: 10%;
+    font-size: 16pt;
+}
+.secondcolmnoffour{
+  background-color: #2c2b30;
+  opacity:.
+}
+.BenefitsSection2{
+  background-color: #2c2b30;
+  Padding:5%
+  Margin-left:30%
+  position: relative;
+  z-index:10;
+  img{
+    padding:10% 10% 10% 30%
+  }
+}
+.BenefitsSection3{
+  background-color: #2c2b30;
+  Padding:5%
+  Margin-left:30%
+  position: relative;
+  z-index:10;
+  img{
+    padding:10% 10% 10% 30%
+  }
+}
+.actionSection{
+  background-color: #2c2b30;
+  width:110%;
+  margin: -5%;
+  opacity:.7;
+  padding: 5% 15% 5% 30%
+}
+.WorksSectionA{
+  display: block;
+  margin-left: 15%;
+  margin-right: auto;
+  width: 100%;
+}
+.WorksSectionB{
+  display: block;
+  margin-left: 15%;
+  margin-right: auto;
+  width: 100%;
+}
+.WorksSectionC{
+  display: block;
+  margin-left: 15%;
+  margin-right: auto;
+  width: 100%;
+}
+.worksText{
+  font-size: 16pt;
+  padding: 5%;
+  text-align: center;
+}
+.ActionHeader{
+  margin: 0% 0% 12% 0%;
+}
+@media only screen and (max-width: 900px) {
+  .sidebar{
+    width: 150px
+  }
+  .homepageHeader{
+
+    p{
+      font-size:14pt;
+    }
+  }
+
+}
+@media only screen and (max-width: 600px) {
+  .sidebar{
+   padding: 15%
+   visibility: hidden;
+   margin-right: 10px;
+  };
+  .TIcon1{
+    width: 80px;
+    margin: 35px;
+  }
+  .homepageHeader{
+    text-align: center;
+    left-margin: 50%
+    top-margin: 30%;
+    padding: 15% 8% 15% 40%;
+    p{
+      padding:2% 10% 2% 0%;
+      font-size: 11pt;
+    }
+  }
+  h1{
+    font-size:20pt;
+  }
+  .BenefitsSection1{
+    Padding:5%
+    Margin-left:30%
+    img{
+      padding:10% 10% 10% 30%;
+      width: 50px;
+    }
+    p{
+      padding: 2%;
+      text-align:  center;
+      font-size: 8pt;
+    }
+  }
+  .BenefitsSection2{
+    Padding:5%
+    Margin-left:30%
+    img{
+      padding:10% 10% 10% 30%;
+      width: 50px;
+    }
+    p{
+      padding: 2%;
+      text-align:  center;
+      font-size: 8pt;
+    }
+  }
+  .BenefitsSection3{
+    Padding:5%
+    Margin-left:30%
+    img{
+      padding:10% 10% 10% 30%;
+      width: 50px;
+    }
+    p{
+      padding: 2%;
+      text-align:  center;
+      font-size: 8pt;
+    }
+  }
+  .TBenes{
+    width:110%
+  }
+
+  .actionSection{
+    width:110%;
+    margin: -5%;
+    opacity:.7;
+    padding: 5% 10% 5% 40%
+  }
+  .WorksSectionA{
+    display: block;
+    margin-left: 15%;
+    margin-right: auto;
+    width: 25%;
+    img{
+      width: 100px
+    }
+  }
+  .WorksSectionB{
+    display: block;
+    margin-left: 15%;
+    margin-right: auto;
+    width: 25%;
+    img{
+      width: 100px
+    }
+  }
+  .WorksSectionC{
+    display: block;
+    margin-left: 15%;
+    margin-right: auto;
+    width: 25%;
+    img{
+      width: 100px
+    }
+  }
+  .worksText{
+    font-size: 8pt;
+    padding: 5% 0% 1% 20%;
+    text-align: center;
+  }
+}
+
+
+.homepageFooter{
+  background-color: #2c2b30;
+  width: 100%;
+
+}
+
 `
